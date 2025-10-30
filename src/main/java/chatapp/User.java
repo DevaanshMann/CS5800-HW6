@@ -35,6 +35,10 @@ public class User implements IterableByUser {
         server.undoLastMessage(this);
     }
 
+    public void undoLastMessage() {
+        server.undoLastMessage(this);
+    }
+
     public void blockUser(String blockeeName){
         server.blockUser(this.name, blockeeName);
     }
