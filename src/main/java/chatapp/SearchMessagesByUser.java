@@ -22,7 +22,7 @@ public class SearchMessagesByUser implements Iterator<Message> {
 
         while (currentIndex < allHistory.size()) {
             Message candidate = allHistory.get(currentIndex);
-            boolean involvesOtherUser = candidate.getSender().equals(otherUserName) || candidate.getRecipients().equals(otherUserName);
+            boolean involvesOtherUser = candidate.getSender().equals(otherUserName) || candidate.getRecipients().contains(otherUserName);
             if (involvesOtherUser) {
                 nextMatch = candidate;
                 break;

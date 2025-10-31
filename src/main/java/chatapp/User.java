@@ -32,7 +32,7 @@ public class User implements IterableByUser {
     }
 
     public void receiveMessageInternal(Message msg) {
-        server.printUserHistory(this);
+        history.addHistory(msg);
     }
 
     public void undoLastMessage() {
