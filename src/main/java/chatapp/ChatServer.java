@@ -45,7 +45,7 @@ public class ChatServer {
             if(rec == null) continue;
 
             if(isBlocked(recName, sender.getName())) {
-                System.out.println("[SERVER] MEssage from " + sender.getName() + " to " + recName + " BLOCKED.");
+                System.out.println("[SERVER] Message from " + sender.getName() + " to " + recName + " BLOCKED.");
                 continue;
             }
             rec.receiveMessageInternal(msg);
@@ -61,7 +61,7 @@ public class ChatServer {
         }
 
         MessageMemento snap = sender.getHistory().undoLastMemento();
-        System.out.println("[SERVER] Undo request by " + sender.getName() + " for message \"" + snap.getContentSnapshot() + "\" at" + snap.getTimestamp());
+        System.out.println("[SERVER] Undo request by " + sender.getName() + " for message \"" + snap.getContentSnapshot() + "\" at " + snap.getTimestamp());
 
         for(String recName : last.getRecipients()) {
             User rec = users.get(recName);
@@ -83,9 +83,4 @@ public class ChatServer {
         }
         System.out.println("-----------------------------------------------------------");
     }
-
-
-
-
-
 }
