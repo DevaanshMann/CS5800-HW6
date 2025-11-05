@@ -23,11 +23,8 @@ public class ChatServer {
     public void blockUser(String blockerName, String blockeeName){
         blockMap.putIfAbsent(blockerName, new HashSet<>());
         blockMap.get(blockerName).add(blockeeName);
-        System.out.println("[SERVER] " + blockerName + " has blocked " + blockerName);
+        System.out.println("[SERVER] " + blockerName + " has blocked " + blockeeName);
     }
-
-//     NEED TO ADD?
-//    public void unblockUser(String blockerName, String blockeeName){}
 
     public boolean isBlocked(String receiverName, String senderName){
         Set<String> blockedSenders = blockMap.getOrDefault(receiverName, Collections.emptySet());

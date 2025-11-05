@@ -33,7 +33,6 @@ public class Message {
     @Override
     public String toString() {
         String recip = recipients.stream().collect(Collectors.joining(", "));
-        return sender + ": " + timestamp + ": " + content + recip;
-//        return "[" + timestamp + "] " + sender + " -> (" + recip + "): " + content;
+        return "[" + timestamp + "] " + sender + " -> [" + recip + "]: " + content;
     }
 }

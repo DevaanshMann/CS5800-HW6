@@ -1,6 +1,6 @@
 package chatapp;
 
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.Iterator;
 
@@ -24,7 +24,7 @@ public class User implements IterableByUser {
     }
 
     public void sendMessage(String recipient, String content) {
-        server.sendMessage(this, Arrays.asList(recipient), content);
+        server.sendMessage(this, Collections.singletonList(recipient), content);
     }
 
     public void sendMessage(List<String> recipients, String content) {
